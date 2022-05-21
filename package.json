@@ -1,0 +1,20 @@
+{
+  "name": "@shengxj/sbpack",
+  "version": "0.0.1",
+  "description": "stackblitz wrapper Vue &amp; React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/course-dasheng/sbpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/course-dasheng/sbpack/issues"
+  },
+  "homepage": "https://github.com/course-dasheng/sbpack#readme"
+}
