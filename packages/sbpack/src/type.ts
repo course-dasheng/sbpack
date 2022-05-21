@@ -1,62 +1,52 @@
-
-
 export type StackblitzEnvironment =
-| "static"
-| "javascript"
-| "vite-static"
-| "typescript"
-| "vue"
-| "vue3"
-| "vite-vue3"
-| "vite-vue3-ts"
-| "react"
-| "vite-react"
-| "vite-react-ts"
-| "angualr"
-| "svelte"
-| "vite-svelte"
-| "solid"
-| "node"
-| "express"
-| "koa"
-| "nextjs"
-| "nuxt3"
-| "next"
-| "slidev"
-| "vitest"
+| 'static'
+| 'javascript'
+| 'vite-static'
+| 'typescript'
+| 'vue'
+| 'vue3'
+| 'vite-vue3'
+| 'vite-vue3-ts'
+| 'react'
+| 'vite-react'
+| 'vite-react-ts'
+| 'angualr'
+| 'svelte'
+| 'vite-svelte'
+| 'solid'
+| 'node'
+| 'express'
+| 'koa'
+| 'nextjs'
+| 'nuxt3'
+| 'next'
+| 'slidev'
+| 'vitest'
 
-export interface ProjectFiles {
-  [path: string]: string;
-}
+export type ProjectFiles = Record<string, string>
+export type OpenFileOption = string | string[]
 
-export interface ProjectDependencies {
-  [name: string]: string;
+export type UiViewOption = 'default' | 'preview' | 'editor'
+
+export type UiThemeOption = 'default' | 'light' | 'dark'
+
+export type ProjectDependencies = Record<string, string>
+export interface ProjectSettings {
+  compile?: {
+    trigger?: 'auto' | 'keystroke' | 'save' | string
+    action?: 'hmr' | 'refresh' | string
+    clearConsole?: boolean
+  }
 }
 
 export interface Project {
-  title: string;
-  description: string;
-  template: StackblitzEnvironment;
-  /**
-   * Provide project files, as code strings.
-   *
-   * Binary files and blobs are not supported.
-   */
-  files: ProjectFiles;
-  /**
-   * Define npm dependencies for EngineBlock projects.
-   *
-   * For WebContainers-based projects (when using `template: 'node'`), this is ignored,
-   * and dependencies must be defined in the `package.json` file in the `files` object.
-   */
-  dependencies?: ProjectDependencies;
-  settings?: ProjectSettings;
-  /**
-   * @deprecated Tags are ignored by the StackBlitz SDK since v1.5.4
-   */
-  tags?: string[];
+  title: string
+  description: string
+  template: StackblitzEnvironment
+  files: ProjectFiles
+  dependencies?: ProjectDependencies
+  settings?: ProjectSettings
 }
-
 
 // {
 //   files: {[path: string]: string};
@@ -73,20 +63,18 @@ export interface Project {
 //   };
 // }
 
-export interface SandpackFile {
-  code: string;
-  hidden?: boolean;
-  active?: boolean;
-  readOnly?: boolean;
+export interface SbpackFile {
+  code: string
+  hidden?: boolean
+  active?: boolean
+  readOnly?: boolean
 }
 
-
-
-export interface SandboxTemplate {
-  files: Record<string, SandpackFile>;
-  dependencies: Record<string, string>;
-  devDependencies?: Record<string, string>;
-  entry: string;
-  main: string;
-  environment: SandboxEnvironment;
+export interface SbpackTemplate {
+  files: Record<string, SbpackFile>
+  dependencies: Record<string, string>
+  devDependencies?: Record<string, string>
+  entry: string
+  main: string
+  environment: StackblitzEnvironment
 }
