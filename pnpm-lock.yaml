@@ -1,0 +1,18 @@
+lockfileVersion: 5.3
+
+importers:
+
+  .:
+    specifiers: {}
+
+  packages/sbpack:
+    specifiers:
+      '@stackblitz/sdk': ^1.6.0
+    devDependencies:
+      '@stackblitz/sdk': 1.6.0
+
+packages:
+
+  /@stackblitz/sdk/1.6.0:
+    resolution: {integrity: sha512-PPB9m1zywojv6sOGSiHv+tvnb4Zc00Jce9yjUG0BzTymUdFf9AP+gKJRlc0iq9vbEEEXfYv1bgKa5KTn4gAzbQ==}
+    dev: true

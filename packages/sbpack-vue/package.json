@@ -1,6 +1,6 @@
 {
   "name": "sbpack-vue",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "stackblitz wrapper for Vue3",
   "main": "index.js",
   "scripts": {
