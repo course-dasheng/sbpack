@@ -1,0 +1,15 @@
+{
+  "name": "sbpack",
+  "version": "0.0.1",
+  "description": "stackblitz client wrapper",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@stackblitz/sdk": "^1.6.0"
+  }
+}
