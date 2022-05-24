@@ -6,7 +6,7 @@ import {
   openGithubProject,
   openProject,
   openProjectId,
-} from './lib';
+} from './lib'
 
 // Explicitly export public types (vs using `export * from './interfaces'`),
 // so that additions to interfaces don't become a part of our public API by mistake.
@@ -22,8 +22,8 @@ export type {
   OpenFileOption,
   UiThemeOption,
   UiViewOption,
-} from './interfaces';
-export type { FsDiff, VM } from './vm';
+} from './interfaces'
+export type { FsDiff, VM } from './vm'
 
 // Export a single object with methods, for compatibility with UMD and CommonJS.
 // Ideally we would also have named exports, but that can create incompatibilities
@@ -37,4 +37,4 @@ export default {
   openGithubProject,
   openProject,
   openProjectId,
-};
+}
