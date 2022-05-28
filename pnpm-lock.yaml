@@ -28,6 +28,14 @@ importers:
   packages/sbpack-vue:
     specifiers: {}
 
+  packages/sdk:
+    specifiers:
+      '@stackblitz/sdk': ^1.6.0
+      fast-glob: ^3.2.11
+    devDependencies:
+      '@stackblitz/sdk': 1.6.0
+      fast-glob: 3.2.11
+
 packages:
 
   /@ampproject/remapping/2.2.0:

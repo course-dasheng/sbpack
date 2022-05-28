@@ -7,8 +7,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "build":"unbuild",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "unbuild"
   },
   "devDependencies": {
     "@stackblitz/sdk": "^1.6.0"
