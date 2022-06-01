@@ -29,10 +29,13 @@ export const PROJECT_TEMPLATES = [
   'node',
   'polymer',
   'typescript',
-  'vue',
-
+  'vue'
+] as const
+export const LOCAL_TEMPLATES = [
   'nuxt3',
   'vite-react',
   'vite-vue3',
-  'vitest',
+  'vitest'
 ] as const
+
+
