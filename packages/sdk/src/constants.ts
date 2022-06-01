@@ -30,4 +30,9 @@ export const PROJECT_TEMPLATES = [
   'polymer',
   'typescript',
   'vue',
+
+  'nuxt3',
+  'vite-react',
+  'vite-vue3',
+  'vitest',
 ] as const
