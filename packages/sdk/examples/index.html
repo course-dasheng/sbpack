@@ -8,50 +8,37 @@
 </head>
 <body>
   <h1>Create new project!</h1>
-
-  <button onclick="openNewProject()">Open in new window</button>
+  <select name="" id="template" >
+    <option value="nuxt3">nuxt3</option>
+    <option value="typescript">typescript</option>
+    <option value="vite-vue3">vite-vue3</option>
+    <option value="vite-react">vite-react</option>
+    <option value="vitest" selected>vitest</option>
+  </select>
+  <button id="new-window">Open in new window</button>
   
-  <button onclick="embedNewProject()">Embed</button>
+  <button id="embed">Embed</button>
   
   
   <div id="myDiv"></div>
 
 <script type="module">
 import sdk from '../dist/index.mjs';
-console.log(sdk)
-
-// Create the index.ts file
-const code = `import moment from 'moment';
-
-document.getElementById('time').innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
-`;
-
-// Create the index.html file
-const html = `<h1>I was created on <span id='time'></span></h1>`;
-
 // Create the project payload.
 const project = {
-  // files: {
-  //   'index.ts': code,
-  //   'index.html': html,
-  // },
   title: 'Dynamically Generated Project',
   description: 'Created with <3 by the StackBlitz SDK!',
-  template: 'node',
-  // dependencies: {
-  //   moment: '*', // * = latest version
-  // },
+  template: 'nuxt3',
 };
 
-// Method to open project in new window
-window['openNewProject'] = () => {
+document.querySelector('#new-window').addEventListener('click',()=>{
   sdk.openProject(project);
-};
+},false)
+document.getElementById('embed').addEventListener('click',()=>{
+  project.template = document.getElementById('template').value
+  sdk.embedProject('myDiv', project, { height: 620 });
 
-// Method to embed this project
-window['embedNewProject'] = () => {
-  sdk.embedProject('myDiv', project, { height: 320 });
-};
+},false)
 
 
 
