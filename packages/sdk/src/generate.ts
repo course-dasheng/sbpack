@@ -1,5 +1,6 @@
 import type { EmbedOptions, OpenOptions, Project } from './interfaces'
-import { PROJECT_TEMPLATES } from './constants'
+import { PROJECT_TEMPLATES,BASE_TEMPLATS } from './constants'
+import {templatesConfig} from  './templates-config'
 import { embedUrl, openTarget, openUrl } from './helpers'
 
 function createHiddenInput(name: string, value: string) {
@@ -15,8 +16,9 @@ function createProjectForm(project: Project) {
     const names = PROJECT_TEMPLATES.map(t => `'${t}'`).join(', ')
     console.warn(`Unsupported project.template: must be one of ${names}`)
   }
-
-  const isWebContainers = project.template === 'node'
+  project.files = templatesConfig[project.template]
+  let template = BASE_TEMPLATS.includes(project.template) ? project.template:'node'
+  const isWebContainers = template === 'node'
 
   const form = document.createElement('form')
   form.method = 'POST'
@@ -24,7 +26,7 @@ function createProjectForm(project: Project) {
 
   form.appendChild(createHiddenInput('project[title]', project.title))
   form.appendChild(createHiddenInput('project[description]', project.description))
-  form.appendChild(createHiddenInput('project[template]', project.template))
+  form.appendChild(createHiddenInput('project[template]', template))
 
   if (project.dependencies) {
     if (isWebContainers) {
