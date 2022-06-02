@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 let templates = {}
-const ignores = ['.DS_Store','package-lock.json']
+const ignores = ['.DS_Store','package-lock.json','node_modules']
 let templateDir = path.resolve(__dirname,'../src/templates')
 fs.readdirSync(templateDir).forEach(dir=>{
   // var filePath = p.join(path, file)
@@ -17,7 +17,6 @@ fs.readdirSync(templateDir).forEach(dir=>{
 function readdir(dirname,prefix,obj){
   let target = path.resolve(dirname,prefix)
   fs.readdirSync(target).filter(d=>!ignores.includes(d)).forEach(dir=>{
-    console.log(123,dir,)
     let ret = fs.statSync(path.resolve(target,dir))
     if(ret.isDirectory()){
       obj[dir] = {}

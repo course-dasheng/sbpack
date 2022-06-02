@@ -7,7 +7,8 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "build": "unbuild"
+    "generate":"esno scripts/generate.ts",
+    "build": "npm run generate && unbuild"
   },
   "devDependencies": {
     "@stackblitz/sdk": "^1.6.0"
