@@ -21,17 +21,20 @@ export const DEFAULT_ORIGIN = 'https://stackblitz.com'
 /**
  * List of supported template names.
  */
-export const BASE_TEMPLATS = [
+export const BASE_TEMPLATES = [
   'create-react-app',
   'angular-cli',
   'javascript',
   'polymer',
   'typescript',
   'vue'
-
+] as const
+export const JAVASCRIPT_TEMPLATES = [
+  'python'
 ] as const
 export const PROJECT_TEMPLATES = [
-  ...BASE_TEMPLATS,
+  ...BASE_TEMPLATES,
+  ...JAVASCRIPT_TEMPLATES,
   'typescript',
   'nuxt3',
   'vite-react',

@@ -1,5 +1,5 @@
 import type { EmbedOptions, OpenOptions, Project } from './interfaces'
-import { PROJECT_TEMPLATES,BASE_TEMPLATS } from './constants'
+import { PROJECT_TEMPLATES,BASE_TEMPLATES,JAVASCRIPT_TEMPLATES } from './constants'
 import {templatesConfig} from  './templates-config'
 import { embedUrl, openTarget, openUrl } from './helpers'
 
@@ -17,7 +17,11 @@ function createProjectForm(project: Project) {
     console.warn(`Unsupported project.template: must be one of ${names}`)
   }
   project.files = templatesConfig[project.template]
-  let template = BASE_TEMPLATS.includes(project.template) ? project.template:'node'
+  let template = BASE_TEMPLATS.includes(project.template) 
+                  ? project.template
+                  : JAVASCRIPT_TEMPLATES.includes(project.template)
+                    ? 'javascript'
+                    : 'node'
   const isWebContainers = template === 'node'
 
   const form = document.createElement('form')
