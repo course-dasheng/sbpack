@@ -27,10 +27,10 @@ export const BASE_TEMPLATES = [
   'javascript',
   'polymer',
   'typescript',
-  'vue'
+  'vue',
 ] as const
 export const JAVASCRIPT_TEMPLATES = [
-  'python'
+  'python',
 ] as const
 export const PROJECT_TEMPLATES = [
   ...BASE_TEMPLATES,
@@ -39,7 +39,6 @@ export const PROJECT_TEMPLATES = [
   'nuxt3',
   'vite-react',
   'vite-vue3',
-  'vitest'
+  'vitest',
 ] as const
-
 

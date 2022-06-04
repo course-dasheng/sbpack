@@ -1,6 +1,6 @@
 import type { EmbedOptions, OpenOptions, Project } from './interfaces'
-import { PROJECT_TEMPLATES,BASE_TEMPLATES,JAVASCRIPT_TEMPLATES } from './constants'
-import {templatesConfig} from  './templates-config'
+import { BASE_TEMPLATES, JAVASCRIPT_TEMPLATES, PROJECT_TEMPLATES } from './constants'
+import { templatesConfig } from './templates-config'
 import { embedUrl, openTarget, openUrl } from './helpers'
 
 function createHiddenInput(name: string, value: string) {
@@ -17,11 +17,11 @@ function createProjectForm(project: Project) {
     console.warn(`Unsupported project.template: must be one of ${names}`)
   }
   project.files = templatesConfig[project.template]
-  let template = BASE_TEMPLATS.includes(project.template) 
-                  ? project.template
-                  : JAVASCRIPT_TEMPLATES.includes(project.template)
-                    ? 'javascript'
-                    : 'node'
+  const template = BASE_TEMPLATS.includes(project.template)
+    ? project.template
+    : JAVASCRIPT_TEMPLATES.includes(project.template)
+      ? 'javascript'
+      : 'node'
   const isWebContainers = template === 'node'
 
   const form = document.createElement('form')

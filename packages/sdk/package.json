@@ -7,7 +7,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "generate":"esno scripts/generate.ts",
+    "generate": "esno scripts/generate.ts",
     "build": "npm run generate && unbuild"
   },
   "devDependencies": {
